@@ -1,0 +1,217 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    min-height: 100vh;
+    font-family: 'figtree' sans-serif;
+    border: 0;
+    padding: 0;
+    background: #E8F3F8;
+
+}
+header{
+    display: flex;
+    padding: 48px;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    border: 0;
+    background-color: #061B25;
+    border-radius: 6px;
+    
+}
+.container1{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: left;
+
+}
+.container1 h1{
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.container1 form{
+    display: flex;
+    gap: 10px;
+
+}
+.container1 input{
+    background-color: #082937;
+    gap: 15px;
+    min-width: 200px;
+    outline: none;
+    border: 0;
+    padding: 5px 20px;
+    display: flex;
+    border-radius: 12px;
+    color: #A4D0E3;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.container1 form button{
+    background-color: #FF8C42;
+    padding: 16px;
+    outline: 0;
+    border: 0;
+    border-radius: 6px;
+    color: #FFFFFF;
+    display: flex;
+}
+section{
+    display: flex;
+    gap: 30px;
+    padding: 60px 120px ;
+
+}
+.container2{
+    display: flex;
+    gap: 40px;
+}
+.stats{
+    list-style-type: none;
+    gap: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    float: right;
+}
+.stats li{
+    display: flex;
+    background: #061B25;
+    color: #A4D0E3;
+    gap: 8px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.stats span{
+    padding: 6px 10px;
+    align-items: center;
+}
+.num{
+    color: #FFFFFF;
+    background: #1C89B8;
+    padding: 4px 8px;
+    border-radius: 0 6px 6px 0;
+}
+.todos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-type: none;
+    flex-shrink: none;
+}
+.todos li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    gap: 12px;
+    border-radius: 6px;
+    color: #061B25;
+    line-height: 24px;
+    font-size: 18px;
+    background: #FFFFFF;
+    flex-shrink: 0;
+}
+
+.todos div{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    min-width: 300px;
+}
+.todos li.completed{
+    background-color: #D2E7F1;
+    text-decoration: line-through;
+    color: #77B8D4;
+}
+input[type='checkbox']{
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    min-width: 24px;
+    min-height: 24px;
+    border: #061B25 1.5px solid;
+    border-radius: 100%;
+    text-wrap: wrap;
+    display: grid;
+    place-content: center;
+    transition: all .2s ease-in-out;
+
+}
+input[type='checkbox']::before {
+    content: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 1L4.5 9L1.5 5.5' stroke='%23D2E7F1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    transform: scale(0);
+    transition: all .2s ease-in-out;
+    
+}
+input[type='checkbox']:checked{
+    background-color: #1C89B8;
+    border: #1C89B8;
+}
+
+input[type='checkbox']:checked::before{
+    transform: scale(1);
+}
+.todos li button{
+    display: grid;
+    border: 0;
+    place-content: center;
+    padding: .25rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+.todos li button svg{
+    width: 24px;
+    height: 24px;
+}
+.todos li button:hover svg path{
+    transition: all .2s ease-in-out;
+}
+.todos li button:hover svg path{
+    stroke: #082937;
+}
+.todos li button:active svg path{
+    transform: scale(.8);
+}
+
+.todos li span{
+    padding: 4px;
+    transition: all .2s ease-in-out;
+    border-radius: 6px;
+}
+.todos li span:focus{
+    background-color: #E8F3F8;
+    outline: none;
+}
+.todos li span:hover{
+    background-color: #D2E7F1;
+}
+
+@media screen and (max-width: 550px) {
+    .container2{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .stats{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    section{
+        padding: 0;
+    }
+    .todos{
+        padding: 0;
+    }
+}
